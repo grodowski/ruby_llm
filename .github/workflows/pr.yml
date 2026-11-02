@@ -2,7 +2,11 @@ name: PR
 
 on:
   pull_request:
-    branches: ["main"]
+    # UndercoverCI demo: this PR is stacked on undercover-ci (PR #1), so it
+    # targets that branch instead of main. Running the checks here too uploads
+    # its coverage, and the uploader reads GITHUB_BASE_REF, so UndercoverCI
+    # diffs against undercover-ci and reports only this PR's changes.
+    branches: ["main", "undercover-ci"]
 
 permissions:
   contents: read
