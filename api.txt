@@ -662,6 +662,7 @@ RubyLLM::Cost#search_units
 RubyLLM::Cost#thinking
 RubyLLM::Cost#to_h
 RubyLLM::Cost#total
+RubyLLM::Cost#within?(budget)
 RubyLLM::Cost.aggregate(costs, complete: true)
 RubyLLM::Cost.from_h(hash, tokens: nil)
 RubyLLM::DeprecationError (class < StandardError)
@@ -739,6 +740,8 @@ RubyLLM::Evaluation::Report#cost
 RubyLLM::Evaluation::Report#counts
 RubyLLM::Evaluation::Report#definitions (attr_reader)
 RubyLLM::Evaluation::Report#each(&)
+RubyLLM::Evaluation::Report#failures
+RubyLLM::Evaluation::Report#headline
 RubyLLM::Evaluation::Report#id (attr_reader)
 RubyLLM::Evaluation::Report#name (attr_reader)
 RubyLLM::Evaluation::Report#pass_rate
@@ -749,6 +752,8 @@ RubyLLM::Evaluation::Report#to_h
 RubyLLM::Evaluation::Report#to_s
 RubyLLM::Evaluation::Report#tokens
 RubyLLM::Evaluation::Report#trials (attr_reader)
+RubyLLM::Evaluation::Report#trials_with(status)
+RubyLLM::Evaluation::Report.pass_rate_of(reports)
 RubyLLM::Evaluation::Result (class)
 RubyLLM::Evaluation::Result include Support::Inspectable
 RubyLLM::Evaluation::Result#error (attr_reader)
