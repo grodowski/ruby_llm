@@ -171,6 +171,17 @@ module RubyLLM
       amounts.sum
     end
 
+    # UndercoverCI demo, scenario 9 of 9: a critical path. cost.rb matches
+    # the "Money" critical paths in the repo's UndercoverCI settings, and
+    # this method has no spec. In neutral mode the warnings above are
+    # yellow annotations; this one is red, is marked (critical) in the
+    # check run table, and fails the check.
+    #
+    # Returns true when the total is known and at most +budget+ US dollars.
+    def within?(budget)
+      !total.nil? && total <= budget
+    end
+
     # Returns a hash of component costs in US dollars, plus +:total+,
     # omitting +nil+ values.
     def to_h
